@@ -19,14 +19,14 @@
 function findWaldo(arr, found) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] === "Waldo") {
-      found();   // execute callback
+      found(arr);   // execute callback
     }
   }
 }
 
-function actionWhenFound() {
-
-      console.log("Found him!");
+function actionWhenFound(arr) {
+  var where = arr.indexOf("Waldo");
+      console.log("Found him at index number " + where);
 }
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
